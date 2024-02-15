@@ -4,9 +4,10 @@ metadata:
   name: nginx-service
 spec:
   selector:
-    app.kubernetes.io/name: proxy
+    app: nginx
   ports:
   - name: name-of-service-port
     protocol: TCP
     port: 80
-    targetPort: http-web-svc
+    targetPort: 80
+  type: ClusterIP
