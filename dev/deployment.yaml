@@ -31,15 +31,15 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: api-gateway
+      app: kong
   template:
     metadata:
       labels:
-        app: api-gateway
+        app: kong
     spec:
       containers:
       - name: api-gateway
-        image: richardchesterwood/k8s-fleetman-api-gateway:release1
+        image: kong
         env:
         - name: SPRING_PROFILE_ACTIVE
           value: production-microservice
