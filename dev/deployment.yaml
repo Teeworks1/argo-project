@@ -21,3 +21,25 @@ spec:
         image: nginx:1.14.2
         ports:
         - containerPort: 80
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-gateway
+  namespace: myapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: api-gateway
+  template:
+    metadata:
+      labels:
+        app: api-gateway
+    spec:
+      containers:
+      - name: api-gateway
+        image: richardchesterwood/k8s-fleetman-api-gateway:release1
+        env:
+        - name: SPRING_PROFILE_ACTIVE
+          value: production-microservice
