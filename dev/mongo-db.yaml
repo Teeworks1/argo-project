@@ -1,10 +1,8 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mongo
+  name: mongo-db
   namespace: myapp
-  labels:
-    app: mongo
 spec:
   replicas: 1
   selector:
@@ -16,23 +14,6 @@ spec:
         app: mongo
     spec:
       containers:
-      - name: mongo
+      - name: mongo-bd
         image: mongo
-        volumeMounts:
-          - name: mongo-persistent-storage
-            mountPath: "/mnt"
-        volumes:
-          -name: mongo-persistent-storage 
-           persistentVolumeClaim:
-             claimName: mongo-pvc
----
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: mongo-pvc
-spec:
-  accessModes:
-  - ReadWriteOnce
-  resources:
-    requests:
-      storage: 2Gi
+        
