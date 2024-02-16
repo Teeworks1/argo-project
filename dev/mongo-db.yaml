@@ -17,4 +17,7 @@ spec:
     spec:
       containers:
       - name: mongodb
-        image: mongodb:7.0.5-jammy
+        image: mongodb
+        volumeMounts:
+          - name: mongo-persistent-storage
+            mountPath: /data/db
