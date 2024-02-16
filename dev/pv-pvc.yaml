@@ -6,7 +6,7 @@ metadata:
 spec:
   storageClassName: mylocalstorage
   capacity:
-    storage: 5Gi
+    storage: 20Gi
   volumeMode: Filesystem
   accessModes:
     - ReadWriteOnce
@@ -28,7 +28,7 @@ spec:
   volumeMode: Filesystem
   resources:
     requests:
-      storage: 20Gi
+      storage: 5Gi
   selector:
     matchLabels:
       release: "stable"
