@@ -5,6 +5,7 @@ metadata:
   namespace: myapp
 
 spec:
+  storageClassName: mylocalstorage
   capacity:
     storage: 5Gi
   volumeMode: Filesystem
@@ -22,6 +23,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: mongo-pvc
 spec:
+  storageClassName: mylocalstorage
   accessModes:
     - ReadWriteOnce
   volumeMode: Filesystem
