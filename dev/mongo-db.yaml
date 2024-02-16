@@ -20,7 +20,7 @@ spec:
         image: mongo
         volumeMounts:
           - name: mongo-persistent-storage
-            mountPath: "/data/db"
+            mountPath: "/mnt"
         volumes:
           -name: mongo-persistent-storage 
            persistentVolumeClaim:
