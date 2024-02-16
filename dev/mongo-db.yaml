@@ -21,3 +21,14 @@ spec:
         volumeMounts:
           - name: mongo-persistent-storage
             mountPath: /data/db
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: volume-claim
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 2Gi
