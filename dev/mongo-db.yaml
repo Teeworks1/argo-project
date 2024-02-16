@@ -14,13 +14,13 @@ spec:
         app: mongo
     spec:
       containers:
-      - name: mongo-bd
+      - name: mongo-db
         image: mongo
         volumeMounts:
           - name: mongo-persistent-storage
             mountPath: /data/db
       volumes:
-      - name: test-volume
+      - name: mongo-persistent-storage
         hostPath:
           path: /mnt
           type: Directory
