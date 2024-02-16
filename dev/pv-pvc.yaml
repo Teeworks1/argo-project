@@ -3,7 +3,6 @@ kind: persistentVolume
 metadata:
   name: mongo-pvc
   namespace: myapp
-
 spec:
   storageClassName: mylocalstorage
   capacity:
