@@ -1,30 +1,28 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mongodb
+  name: mongo
   namespace: myapp
   labels:
-    app: mongodb
+    app: mongo
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: mongodb
+      app: mongo
   template:
     metadata:
       labels:
-        app: mongodb
+        app: mongo
     spec:
       containers:
-      - name: mongodb
-        image: mongodb:3.6.5-jessie
+      - name: mongo
+        image: mongo
         volumeMounts:
           - name: mongo-persistent-storage
-            mountPath: /data/db
-
+            mountPath: "/data/db"
         volumes:
-          -name: mongo-persistent-storage
-           
+          -name: mongo-persistent-storage 
            persistentVolumeClaim:
              claimName: mongo-pvc
 ---
