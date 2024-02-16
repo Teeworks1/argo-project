@@ -11,7 +11,6 @@ spec:
   accessModes:
     - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
-  storageClassName: slow
   mountOptions:
     path: /mnt/somedirectory
     type: Directory
@@ -30,7 +29,6 @@ spec:
   resources:
     requests:
       storage: 20Gi
-  storageClassName: slow
   selector:
     matchLabels:
       release: "stable"
