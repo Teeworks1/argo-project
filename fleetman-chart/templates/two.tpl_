@@ -1,0 +1,7 @@
+ {{define "nginx"}}
+   - name: api-gateway
+     image: {{ .Values.demoRepoName}}/k8s-fleetman-helm-demo:v1.0.0{{if .Values.development }}-dev{{ end }}
+     env: 
+     - name: SPRING_PROFILE_ACTIVE
+       value: production-microservice
+{{end}}
