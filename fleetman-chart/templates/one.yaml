@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deployment
+  name: {{ .Release.Name}}-Nginx-deployment
   namespace: myapp
   labels:
     app: nginx
@@ -25,7 +25,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: api-gateway
+  name: {{ .Release.Name}}-api-gateway
   namespace: myapp
 spec:
   replicas: 1
