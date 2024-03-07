@@ -5,6 +5,7 @@ metadata:
   namespace: myapp
   labels : 
     release: stable
+    type: local
 spec:
   capacity:
     storage: 5Gi
@@ -13,8 +14,9 @@ spec:
     - ReadWriteMany
   persistentVolumeReclaimPolicy: Recycle
   storageClassName: slow
+  hostPath:
+    path: "/mnt/data"
 
-  ---
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
@@ -31,4 +33,5 @@ spec:
   selector:
     matchLabels:
       release: "stable"
+
  
