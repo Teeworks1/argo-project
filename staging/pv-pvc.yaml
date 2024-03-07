@@ -2,7 +2,7 @@ apiVersion: v1
 kind: PersistentVolume
 metadata:
   name: mongo-persistent-storage-foo
-  namespace: myapp
+  namespace: myapp2
   labels : 
     release: stable
     type: local
@@ -21,7 +21,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: mongo-pvc-foo
-  namespace: myapp
+  namespace: myapp2
 spec:
   accessModes:
     - ReadWriteMany

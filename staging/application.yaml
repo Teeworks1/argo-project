@@ -13,7 +13,7 @@ spec:
       path: staging
     destination:
        server: https://kubernetes.default.svc
-       namespace: myapp
+       namespace: myapp2
     syncPolicy:
        syncOptions:
        - CreateNamespace=true
