@@ -16,4 +16,21 @@ spec:
   storageClassName: slow
   hostPath:
     path: "/mnt/data/new"
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mongo-pvc-foo
+  namespace: myapp2
+spec:
+  accessModes:
+    - ReadWriteMany
+  volumeMode: Filesystem
+  resources:
+    requests:
+      storage: 1Gi
+  storageClassName: slow
+  selector:
+    matchLabels:
+      release: "stable"
  
