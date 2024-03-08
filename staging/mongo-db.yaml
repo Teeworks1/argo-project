@@ -17,10 +17,10 @@ spec:
       - name: mongo-db
         image: mongo
         volumeMounts:
-          - name: mongo-persistent-storage-foo
+          - name: mongo-pv-foo
             mountPath: /data/db
       volumes:
-      - name: mongo-persistent-storage-foo
+      - name: mongo-pv-foo
         persistentVolumeClaim: 
           claimName:  mongo-pvc-foo
 
