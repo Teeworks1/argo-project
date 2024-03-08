@@ -5,8 +5,6 @@ metadata:
    namespace: argocd
 spec:
     project: default
-  
-
     source: 
       repoURL: https://github.com/Teeworks1/argo-project.git
       targetRevision: HEAD
@@ -19,7 +17,6 @@ spec:
        - CreateNamespace=true
        - ApplyOutOfSyncOnly=true
        - ServerSideApply=true
-
        automated:
          selfHeal: true
          prune: true
