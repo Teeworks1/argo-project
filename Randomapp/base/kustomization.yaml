@@ -5,6 +5,7 @@ resources:
 - Deployment/deployment.yaml
 - clusterRole/clusterRole.yaml
 - configMap/configmap.yaml
+- application/application.yaml
 - https://github.com/argoproj/argo-cd/tree/master/manifests/base
 #- https://github.com/argoproj/argo-cd/tree/master/manifests/
 #- https://github.com/argoproj/argo-cd/tree/master/manifests/cluster-install
