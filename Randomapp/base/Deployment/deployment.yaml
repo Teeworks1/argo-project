@@ -1,12 +1,11 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deployment
+  name: nginx-dev
   namespace: myapp
   labels:
     app: nginx
 spec:
-  Mainready: 30
   replicas: 4
   selector:
     matchLabels:
@@ -19,28 +18,7 @@ spec:
       containers:
       - name: nginx
         image: nginx:1.14.2
-        ports:
-        - containerPort: 27017
----
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: api-gateway
-  namespace: myapp
-spec:
-  replicas: 2
-  selector:
-    matchLabels:
-      app: api-gateway
-  template:
-    metadata:
-      labels:
-        app: api-gateway
-    spec:
-      containers:
-      - name: api-gateway
-        image: richardchesterwood/k8s-fleetman-api-gateway:release1
-            command: ["sleep", "3600"]
+        command: ["sleep", "3600"]
         env:
         # Define the environment variable
         - name: PLAYER_INITIAL_LIVES # Notice that the case is different here
@@ -54,3 +32,7 @@ spec:
             configMapKeyRef:
               name: game-demo
               key: ui_properties_file_name
+        ports:
+        - containerPort: 27017
+
+     

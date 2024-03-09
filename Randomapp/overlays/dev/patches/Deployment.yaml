@@ -1,0 +1,9 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-dev
+  namespace: myapp
+  labels:
+    app: nginx
+spec:
+  replicas: 2
