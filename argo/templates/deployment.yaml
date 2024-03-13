@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Values.app}}-deployment
+  name: {{ .Release.Name}}-webapp
   labels:
     app: {{ .Values.app}}
 spec:
@@ -20,7 +20,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: my-service
+  name: {{ .Release.Name}}-service
 spec:
   selector:
     app.kubernetes.io/name: MyApp
